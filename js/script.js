@@ -61,20 +61,24 @@ const miaApp = createApp({
         },
       ],
       counter: 0,
+      something: false,
     };
   },
   methods: {
     nextImage() {
       this.counter++;
-      if (this.counter >= this.slides.length) {
+      if (this.counter === this.slides.length) {
         this.counter = 0;
       }
     },
     prevImage() {
       this.counter--;
-      if (this.counter < 0) {
+      if (this.counter === -1) {
         this.counter = this.slides.length - 1;
       }
+    },
+    activeFunction(count) {
+      return count === this.counter ? "active" : "";
     },
   },
 });
