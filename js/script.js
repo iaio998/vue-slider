@@ -61,7 +61,6 @@ const miaApp = createApp({
         },
       ],
       counter: 0,
-      something: false,
     };
   },
   methods: {
@@ -77,10 +76,14 @@ const miaApp = createApp({
         this.counter = this.slides.length - 1;
       }
     },
-    activeFunction(count) {
-      return count === this.counter ? "active" : "";
+    activeFunction(index) {
+      return index === this.counter ? "active" : "";
+    },
+    clicked(index) {
+      this.counter = index;
     },
   },
+  mounted() {},
 });
 
 miaApp.mount("#app");
