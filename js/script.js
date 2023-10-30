@@ -63,7 +63,20 @@ const miaApp = createApp({
       counter: 0,
     };
   },
-  methods: {},
+  methods: {
+    nextImage() {
+      this.counter++;
+      if (this.counter >= this.slides.length) {
+        this.counter = 0;
+      }
+    },
+    prevImage() {
+      this.counter--;
+      if (this.counter < 0) {
+        this.counter = this.slides.length - 1;
+      }
+    },
+  },
 });
 
 miaApp.mount("#app");
