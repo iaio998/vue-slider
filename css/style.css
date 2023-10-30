@@ -42,6 +42,10 @@
 .thumb {
   height: calc((300px) / 5);
   opacity: 0.5;
+  cursor: pointer;
+}
+.thumb:hover {
+  border: 3px solid rgba(0, 225, 255, 0.795);
 }
 
 .thumb img {
