@@ -82,8 +82,13 @@ const miaApp = createApp({
     clicked(index) {
       this.counter = index;
     },
+    autoChange() {
+      setInterval(this.nextImage, 5000);
+    },
   },
-  mounted() {},
+  mounted() {
+    this.autoChange();
+  },
 });
 
 miaApp.mount("#app");
